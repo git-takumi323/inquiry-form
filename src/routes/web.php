@@ -11,7 +11,7 @@ Route::post('/confirm', [ContactController::class, 'confirm'])->name('contact.co
 Route::post('/thanks', [ContactController::class, 'thanks'])->name('contact.thanks');
 
 // 管理画面
-Route::get('/admin', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+Route::get('/admin', [AdminController::class, 'dashboard'])->middleware('auth')->name('admin.dashboard');
 
 // 認証関連
 Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('auth.register');

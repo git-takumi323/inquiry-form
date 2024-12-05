@@ -1,5 +1,9 @@
-<x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
+@extends('layouts.app')
+
+@section('title', '管理者登録画面')
+
+@section('content')
+    <form method="POST" action="{{ route('auth.register') }}">
         @csrf
 
         <div>
@@ -29,5 +33,5 @@
         <button type="submit">登録</button>
     </form>
 
-    <a href="{{ route('login') }}">login</a>
-</x-guest-layout>
+    <a href="{{ route('auth.register') }}">login</a>
+    @endsection

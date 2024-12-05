@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Category; // Categoryモデルをインポート
 
 class ContactController extends Controller
 {
@@ -9,7 +10,6 @@ class ContactController extends Controller
     public function index()
     {
         $categories = Category::all();
-        return view('contact.form');
         return view('contact.form', compact('categories'));
     }
 

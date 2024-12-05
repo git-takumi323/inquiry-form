@@ -1,4 +1,8 @@
-<x-admin-layout>
+@extends('layouts.app')
+
+@section('title', '管理者画面')
+
+@section('content')
     <form method="GET" action="{{ route('admin.index') }}">
         <input type="text" name="name" placeholder="名前やメールアドレスを入力してください" value="{{ request('name') }}">
         <select name="gender">
@@ -42,4 +46,4 @@
 
     {{ $inquiries->links() }}
     <button onclick="window.location='{{ route('admin.export') }}'">エクスポート</button>
-</x-admin-layout>
+    @endsection
