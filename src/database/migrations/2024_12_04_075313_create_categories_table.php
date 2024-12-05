@@ -15,8 +15,8 @@ class CreateCategoriesTable extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id(); // 主キー
-            $table->string('content', 255); // お問い合わせ内容
-            $table->timestamps(); // created_at, updated_at
+            $table->string('content', 255); // カテゴリの内容
+            $table->timestamps(); // 登録日時・更新日時
         });
     }
 

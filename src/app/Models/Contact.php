@@ -26,6 +26,7 @@ class Contact extends Model
         'address',
         'building',
         'detail',
+        'type',
     ];
     /**
      * リレーション: Category
