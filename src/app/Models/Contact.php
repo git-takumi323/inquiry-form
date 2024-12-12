@@ -32,9 +32,9 @@ class Contact extends Model
      * リレーション: Category
      */
     public function category()
-    {
-        return $this->belongsTo(Category::class);
-    }
+{
+    return $this->belongsTo(Category::class, 'category_id'); // category_idを外部キーとして扱う
+}
 
     /**
      * リレーション: User
@@ -43,4 +43,18 @@ class Contact extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function getGenderAttribute($value)
+    {
+        switch ($value) {
+            case 'male':
+                return '男';
+            case 'female':
+                return '女';
+            case 'other':
+                return 'その他';
+            default:
+                return $value;
+        }
+    }
+
 }

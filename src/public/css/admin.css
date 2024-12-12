@@ -1,4 +1,3 @@
-/* 一般スタイリング */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f9f9f9;
@@ -12,7 +11,15 @@ h1 {
     color: #5a4e4d;
 }
 
-form {
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* 検索フォーム */
+.search-form {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -25,9 +32,9 @@ form {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-form input,
-form select,
-form button {
+.search-form input,
+.search-form select,
+.search-form button {
     padding: 10px;
     font-size: 14px;
     border: 1px solid #ccc;
@@ -35,17 +42,37 @@ form button {
     margin-right: 10px;
 }
 
-form button {
+.search-form button {
     background-color: #8c7d77;
     color: white;
     border: none;
     cursor: pointer;
 }
 
-form button:hover {
+.search-form button:hover {
     background-color: #5a4e4d;
 }
 
+/* エクスポートボタン */
+.export-section {
+    text-align: right;
+}
+
+.export-form .export-button {
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #8c7d77;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.export-form .export-button:hover {
+    background-color: #5a4e4d;
+}
+
+/* テーブル */
 table {
     width: 100%;
     margin: 20px auto;
@@ -65,15 +92,11 @@ table td {
     border: 1px solid #ddd;
 }
 
-table th {
-    font-weight: bold;
-}
-
 table tbody tr:hover {
     background-color: #f1f1f1;
 }
 
-/* モーダルウィンドウ */
+/* モーダル */
 .modal {
     display: none;
     position: fixed;

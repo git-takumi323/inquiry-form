@@ -3,8 +3,10 @@
 @section('title', '管理者登録画面')
 
 @section('content')
-    <form method="POST" action="{{ route('auth.register') }}">
+<form method="POST" action="{{ route('register') }}">
         @csrf
+
+        <h1>ユーザー登録</h1>
 
         <div>
             <label for="name">お名前</label>
@@ -24,14 +26,19 @@
 
         <div>
             <label for="password">パスワード</label>
-            <input id="password" name="password" type="password" placeholder="例: coachtech1106" required>
+            <input id="password" name="password" type="password" placeholder="8文字以上で入力してください" required>
             @error('password')
                 <p class="text-red-600">{{ $message }}</p>
             @enderror
         </div>
 
+        <div>
+            <label for="password_confirmation">パスワード確認</label>
+            <input id="password_confirmation" name="password_confirmation" type="password" placeholder="パスワードを再入力してください" required>
+        </div>
+
         <button type="submit">登録</button>
     </form>
 
-    <a href="{{ route('auth.register') }}">login</a>
+    <a href="{{ route('login') }}">ログイン</a>
     @endsection

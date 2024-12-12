@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\AuthController;
+use Laravel\Fortify\Fortify;
 
 // お問い合わせ関連
 Route::get('/', [ContactController::class, 'index'])->name('contact.form');
@@ -11,10 +11,17 @@ Route::post('/confirm', [ContactController::class, 'confirm'])->name('contact.co
 Route::post('/thanks', [ContactController::class, 'thanks'])->name('contact.thanks');
 
 // 管理画面
-Route::get('/admin', [AdminController::class, 'dashboard'])->middleware('auth')->name('admin.dashboard');
+Route::prefix('admin')->middleware(['auth'])->group(function () {
+    Route::get('/', [AdminController::class, 'index'])->name('admin.index'); // 管理画面トップ
+    Route::get('/export', [AdminController::class, 'exportCsv'])->name('admin.export'); // CSVエクスポート
+});
 
 // 認証関連
-Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('auth.register');
-Route::post('/register', [AuthController::class, 'register']);
-Route::get('/login', [AuthController::class, 'showLoginForm'])->name('auth.login');
-Route::post('/login', [AuthController::class, 'login']);
+// Fortifyの登録ビュー
+Fortify::registerView(function () {
+    return view('auth.register');
+});
+// Fortifyのログインビュー
+Fortify::loginView(function () {
+    return view('auth.login');
+});

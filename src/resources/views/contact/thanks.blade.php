@@ -1,31 +1,8 @@
-<!DOCTYPE html>
-<html lang="ja">
+@extends('layouts.app')
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Form</title>
-  <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
-  <link rel="stylesheet" href="{{ asset('css/thanks.css') }}" />
-</head>
+@section('title', '送信完了')
 
-<body>
-  <header class="header">
-    <div class="header__inner">
-      <a class="header__logo" href="/">
-        Contact Form
-      </a>
-    </div>
-  </header>
-
-  <main>
-    <div class="thanks__content">
-      <div class="thanks__heading">
-        <h2>お問い合わせありがとうございます</h2>
-      </div>
-    </div>
-  </main>
-</body>
-
-</html>
+@section('content')
+<h1>お問い合わせありがとうございます！</h1>
+<p>お問い合せ内容を受け付けました。追ってご連絡いたしますので、少々お待ちください。</p>
+@endsection
