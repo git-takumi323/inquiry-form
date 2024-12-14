@@ -1,6 +1,7 @@
-# アプリケーション名
+# お問い合わせフォーム
 
 ## 環境構築
+### Docker build
 - 1 git clone 
 - 2 docker-compose up -d --build
 - ※ OSに合わせて、ymlファイルの修正をお願いします。 
