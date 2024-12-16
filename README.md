@@ -4,7 +4,10 @@
 ### Docker build
 - 1 git clone 
 - 2 docker-compose up -d --build
-- ※ OSに合わせて、ymlファイルの修正をお願いします。 
+- ※ OSに合わせて、ymlファイルの修正をお願いします。
+### Laravel環境構築
+- 1 docker-compose exec php bash
+- 2 
 - 3 
 - 4
 - 5
