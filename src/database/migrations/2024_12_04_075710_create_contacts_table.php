@@ -18,13 +18,12 @@ class CreateContactsTable extends Migration
             $table->foreignId('category_id')->constrained()->onDelete('cascade'); // 外部キー（categoriesテーブル）
             $table->string('first_name', 255); // 名前（名）
             $table->string('last_name', 255); // 名前（姓）
-            $table->string('gender'); // 性別
+            $table->tinyInteger('gender')->comment('1:男性, 2:女性, 3:その他'); // 性別
             $table->string('email', 255)->unique(); // メールアドレス（ユニーク制約）
             $table->string('tel', 255); // 電話番号
             $table->string('address', 255); // 住所
             $table->string('building', 255)->nullable(); // 建物名（NULL許容）
             $table->text('detail'); // 詳細
-            $table->string('type'); // 問い合わせのタイプ
             $table->timestamps(); // created_at, updated_at
         });
     }

@@ -101,9 +101,5 @@
             <p class="text-red-600">{{ $message }}</p>
         @enderror
     </div>
-
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary">確認画面へ進む</button>
-    </div>
 </form>
 @endsection

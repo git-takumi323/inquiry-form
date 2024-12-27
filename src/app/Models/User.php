@@ -32,11 +32,4 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    /**
-     * リレーション: Contacts
-     */
-    public function contacts()
-    {
-        return $this->hasMany(Contact::class);
-    }
 }
