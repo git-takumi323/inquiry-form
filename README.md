@@ -1,17 +1,14 @@
 # inquiry-form
 
 ## 環境構築
-- Dockerのビルドからマイグレーション、シーディングまでを記述する
 - docker-compose up -d --build
 - docker-compose exec php bash
 - composer create-project "laravel/laravel=8.*" . --prefer-dist
-- php artisan make:migration create_products_table
-- php artisan make:migration create_seasons_table
-- php artisan make:migration create_product_season_table
+- php artisan make:migration create_categories_table
+- php artisan make:migration create_contacts_table
 - php artisan migrate
-- php artisan make:seeder ProductsTableSeeder
-- php artisan make:seeder SeasonsTableSeeder
-- php artisan make:seeder ProductSeasonTableSeeder
+- php artisan make:seeder CategoriesTableSeeder
+- php artisan make:factory ContactFactory
 - php artisan db:seed
 
 ## 使用技術(実行環境)
